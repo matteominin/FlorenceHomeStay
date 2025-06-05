@@ -1,0 +1,32 @@
+section {
+    margin: 3rem auto 4rem auto;
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 0;
+
+        h1 {
+            flex: 0.5;
+
+        }
+
+        .right {
+            flex: 0.5;
+
+            p {
+                margin-bottom: 1rem;
+            }
+
+            .cta>button:first-of-type {
+                margin-right: 2rem;
+            }
+        }
+    }
+
+    img {
+        margin: 2rem auto;
+    }
+}

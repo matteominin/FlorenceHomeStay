@@ -1,0 +1,431 @@
+/* --- START: Content from _variables.scss --- */
+// Neutrals
+$color-neutral-white: #FFFFFF;
+$color-neutral-lightest: #F2F2F2;
+$color-neutral-lighter: #D8D8D8;
+$color-neutral-light: #828282;
+$color-neutral: #7F7F7F;
+$color-neutral-dark: #4C4C4C;
+$color-neutral-darker: #191919;
+$color-neutral-darkest: #000000;
+
+// Clairvoyant
+$color-clairvoyant-lightest: #EBE6EE;
+$color-clairvoyant-lighter: #D8CDDD;
+$color-clairvoyant-light: #765088;
+$color-clairvoyant: #3C0656;
+$color-clairvoyant-dark: #300444;
+$color-clairvoyant-darker: #180222;
+$color-clairvoyant-darkest: #120119;
+
+// Font Families (Sass variables)
+$font-family-heading: 'Outfit', sans-serif;
+$font-family-body: 'Karla', sans-serif;
+
+// Font Weights (using numerical values for consistency)
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 800;
+
+// Breakpoints
+$breakpoint-mobile: 320px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-large-desktop: 1440px;
+/* --- END: Content from _variables.scss --- */
+
+
+/* --- START: Content from _colors.scss (generates :root CSS variables from Sass variables) --- */
+:root {
+    /* Neutrals */
+    --color-neutral-white: #{$color-neutral-white};
+    --color-neutral-lightest: #{$color-neutral-lightest};
+    --color-neutral-lighter: #{$color-neutral-lighter};
+    --color-neutral-light: #{$color-neutral-light};
+    --color-neutral: #{$color-neutral};
+    --color-neutral-dark: #{$color-neutral-dark};
+    --color-neutral-darker: #{$color-neutral-darker};
+    --color-neutral-darkest: #{$color-neutral-darkest};
+
+    /* Clairvoyant */
+    --color-clairvoyant-lightest: #{$color-clairvoyant-lightest};
+    --color-clairvoyant-lighter: #{$color-clairvoyant-lighter};
+    --color-clairvoyant-light: #{$color-clairvoyant-light};
+    --color-clairvoyant: #{$color-clairvoyant};
+    --color-clairvoyant-dark: #{$color-clairvoyant-dark};
+    --color-clairvoyant-darker: #{$color-clairvoyant-darker};
+    --color-clairvoyant-darkest: #{$color-clairvoyant-darkest};
+}
+
+/* --- END: Content from _colors.scss --- */
+
+
+/* --- START: Content from _typography.scss --- */
+:root {
+    // Font Families (defined here as CSS variables, from Sass variables)
+    --font-family-heading: #{$font-family-heading};
+    --font-family-body: #{$font-family-body};
+
+    // Font Weights (defined here as CSS variables for wider access)
+    --font-weight-light: #{$font-weight-light};
+    --font-weight-normal: #{$font-weight-normal};
+    --font-weight-medium: #{$font-weight-medium};
+    --font-weight-semi-bold: #{$font-weight-semi-bold};
+    --font-weight-bold: #{$font-weight-bold};
+    --font-weight-extra-bold: #{$font-weight-extra-bold};
+
+    // Desktop Heading Sizes & Line Heights
+    --h1-font-size-desktop: 3.5rem;
+    /* 56px */
+    --h1-line-height-desktop: 120%;
+    --h2-font-size-desktop: 3rem;
+    /* 48px */
+    --h2-line-height-desktop: 120%;
+    --h3-font-size-desktop: 2.5rem;
+    /* 40px */
+    --h3-line-height-desktop: 120%;
+    --h4-font-size-desktop: 2rem;
+    /* 32px */
+    --h4-line-height-desktop: 130%;
+    --h5-font-size-desktop: 1.5rem;
+    /* 24px */
+    --h5-line-height-desktop: 140%;
+    --h6-font-size-desktop: 1.25rem;
+    /* 20px */
+    --h6-line-height-desktop: 140%;
+
+    // Mobile Heading Sizes & Line Heights
+    --h1-font-size-mobile: 2.5rem;
+    /* 40px */
+    --h1-line-height-mobile: 120%;
+    --h2-font-size-mobile: 2.25rem;
+    /* 36px */
+    --h2-line-height-mobile: 120%;
+    --h3-font-size-mobile: 2rem;
+    /* 32px */
+    --h3-line-height-mobile: 120%;
+    --h4-font-size-mobile: 1.5rem;
+    /* 24px */
+    --h4-line-height-mobile: 130%;
+    --h5-font-size-mobile: 1.25rem;
+    /* 20px */
+    --h5-line-height-mobile: 140%;
+    --h6-font-size-mobile: 1.125rem;
+    /* 18px */
+    --h6-line-height-mobile: 140%;
+
+    // Text Styles
+    --tagline-font-size: 1.25rem;
+    /* 20px */
+    --tagline-line-height: 150%;
+
+    --text-large-font-size: 1.125rem;
+    /* 18px */
+    --text-large-line-height: 150%;
+
+    --text-medium-font-size: 1rem;
+    /* 16px */
+    --text-medium-line-height: 150%;
+
+    --text-regular-font-size: 0.875rem;
+    /* 14px */
+    --text-regular-line-height: 150%;
+
+    --text-small-font-size: 0.875rem;
+    /* 14px */
+    --text-small-line-height: 150%;
+
+    --text-tiny-font-size: 0.75rem;
+    /* 12px */
+    --text-tiny-line-height: 150%;
+}
+
+/* Global Heading Styles (using nested media queries) */
+h1 {
+    font-size: var(--h1-font-size-mobile);
+    line-height: var(--h1-line-height-mobile);
+    font-weight: var(--font-weight-normal);
+    letter-spacing: -0.2rem;
+
+    @media (min-width: #{$breakpoint-tablet}) {
+        // Use Sass variable for breakpoint
+        font-size: var(--h1-font-size-desktop);
+        line-height: var(--h1-line-height-desktop);
+    }
+}
+
+h2 {
+    font-size: var(--h2-font-size-mobile);
+    line-height: var(--h2-line-height-mobile);
+
+    @media (min-width: #{$breakpoint-tablet}) {
+        font-size: var(--h2-font-size-desktop);
+        line-height: var(--h2-line-height-desktop);
+    }
+}
+
+h3 {
+    font-size: var(--h3-font-size-mobile);
+    line-height: var(--h3-line-height-mobile);
+
+    @media (min-width: #{$breakpoint-tablet}) {
+        font-size: var(--h3-font-size-desktop);
+        line-height: var(--h3-line-height-desktop);
+    }
+}
+
+h4 {
+    font-size: var(--h4-font-size-mobile);
+    line-height: var(--h4-line-height-mobile);
+
+    @media (min-width: #{$breakpoint-tablet}) {
+        font-size: var(--h4-font-size-desktop);
+        line-height: var(--h4-line-height-desktop);
+    }
+}
+
+h5 {
+    font-size: var(--h5-font-size-mobile);
+    line-height: var(--h5-line-height-mobile);
+
+    @media (min-width: #{$breakpoint-tablet}) {
+        font-size: var(--h5-font-size-desktop);
+        line-height: var(--h5-line-height-desktop);
+    }
+}
+
+h6 {
+    font-size: var(--h6-font-size-mobile);
+    line-height: var(--h6-line-height-mobile);
+
+    @media (min-width: #{$breakpoint-tablet}) {
+        font-size: var(--h6-font-size-desktop);
+        line-height: var(--h6-line-height-desktop);
+    }
+}
+
+/* Text Style Classes */
+.tagline {
+    font-family: var(--font-family-body);
+    font-size: var(--tagline-font-size);
+    line-height: var(--tagline-line-height);
+    font-weight: var(--font-weight-normal);
+}
+
+// Mixin for applying text styles to reduce repetition and ensure consistency
+@mixin text-style($size-var, $line-height-var, $font-weight-var) {
+    font-family: var(--font-family-body);
+    font-size: var(#{$size-var});
+    line-height: var(#{$line-height-var});
+    font-weight: var(#{$font-weight-var});
+}
+
+.text-large {
+    @include text-style(--text-large-font-size, --text-large-line-height, --font-weight-normal);
+}
+
+.text-large--extra-bold {
+    @include text-style(--text-large-font-size, --text-large-line-height, --font-weight-extra-bold);
+}
+
+.text-large--bold {
+    @include text-style(--text-large-font-size, --text-large-line-height, --font-weight-bold);
+}
+
+.text-large--semi-bold {
+    @include text-style(--text-large-font-size, --text-large-line-height, --font-weight-semi-bold);
+}
+
+.text-large--medium {
+    @include text-style(--text-large-font-size, --text-large-line-height, --font-weight-medium);
+}
+
+.text-large--light {
+    @include text-style(--text-large-font-size, --text-large-line-height, --font-weight-light);
+}
+
+.text-medium {
+    @include text-style(--text-medium-font-size, --text-medium-line-height, --font-weight-normal);
+}
+
+.text-medium--extra-bold {
+    @include text-style(--text-medium-font-size, --text-medium-line-height, --font-weight-extra-bold);
+}
+
+.text-medium--bold {
+    @include text-style(--text-medium-font-size, --text-medium-line-height, --font-weight-bold);
+}
+
+.text-medium--semi-bold {
+    @include text-style(--text-medium-font-size, --text-medium-line-height, --font-weight-semi-bold);
+}
+
+.text-medium--medium {
+    @include text-style(--text-medium-font-size, --text-medium-line-height, --font-weight-medium);
+}
+
+.text-medium--light {
+    @include text-style(--text-medium-font-size, --text-medium-line-height, --font-weight-light);
+}
+
+.text-regular {
+    @include text-style(--text-regular-font-size, --text-regular-line-height, --font-weight-normal);
+}
+
+.text-regular--extra-bold {
+    @include text-style(--text-regular-font-size, --text-regular-line-height, --font-weight-extra-bold);
+}
+
+.text-regular--bold {
+    @include text-style(--text-regular-font-size, --text-regular-line-height, --font-weight-bold);
+}
+
+.text-regular--semi-bold {
+    @include text-style(--text-regular-font-size, --text-regular-line-height, --font-weight-semi-bold);
+}
+
+.text-regular--medium {
+    @include text-style(--text-regular-font-size, --text-regular-line-height, --font-weight-medium);
+}
+
+.text-regular--light {
+    @include text-style(--text-regular-font-size, --text-regular-line-height, --font-weight-light);
+}
+
+.text-small {
+    @include text-style(--text-small-font-size, --text-small-line-height, --font-weight-normal);
+}
+
+.text-small--extra-bold {
+    @include text-style(--text-small-font-size, --text-small-line-height, --font-weight-extra-bold);
+}
+
+.text-small--bold {
+    @include text-style(--text-small-font-size, --text-small-line-height, --font-weight-bold);
+}
+
+.text-small--semi-bold {
+    @include text-style(--text-small-font-size, --text-small-line-height, --font-weight-semi-bold);
+}
+
+.text-small--medium {
+    @include text-style(--text-small-font-size, --text-small-line-height, --font-weight-medium);
+}
+
+.text-small--light {
+    @include text-style(--text-small-font-size, --text-small-line-height, --font-weight-light);
+}
+
+.text-tiny {
+    @include text-style(--text-tiny-font-size, --text-tiny-line-height, --font-weight-normal);
+}
+
+.text-tiny--extra-bold {
+    @include text-style(--text-tiny-font-size, --text-tiny-line-height, --font-weight-extra-bold);
+}
+
+.text-tiny--bold {
+    @include text-style(--text-tiny-font-size, --text-tiny-line-height, --font-weight-bold);
+}
+
+.text-tiny--semi-bold {
+    @include text-style(--text-tiny-font-size, --text-tiny-line-height, --font-weight-semi-bold);
+}
+
+.text-tiny--medium {
+    @include text-style(--text-tiny-font-size, --text-tiny-line-height, --font-weight-medium);
+}
+
+.text-tiny--light {
+    @include text-style(--text-tiny-font-size, --text-tiny-line-height, --font-weight-light);
+}
+
+/* --- END: Content from _typography.scss --- */
+
+
+/* --- START: CSS Reset or Normalize --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 1rem;
+}
+
+/* --- END: CSS Reset or Normalize --- */
+
+
+/* --- START: Base Body Styles --- */
+body {
+    font-family: var(--font-family-body);
+    font-size: 16px;
+    /* Base for rem units */
+    line-height: 1.5;
+    /* Default line height for body text */
+    color: var(--color-neutral-darker);
+    background-color: var(--color-neutral-lightest);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- END: Base Body Styles --- */
+
+
+/* --- START: Color Scheme Definitions (from _color-schemes.scss map generation) --- */
+/* These classes define the CSS variables for each scheme */
+.scheme-1 {
+    --scheme-text-color: var(--color-neutral-darkest);
+    --scheme-background-color: var(--color-neutral-white);
+    --scheme-foreground-color: var(--color-neutral-white);
+    --scheme-border-color: var(--color-neutral-darkest);
+    --scheme-accent-color: var(--color-clairvoyant);
+}
+
+.scheme-2 {
+    --scheme-text-color: var(--color-neutral-white);
+    --scheme-background-color: var(--color-clairvoyant-light);
+    --scheme-foreground-color: var(--color-clairvoyant-light);
+    --scheme-border-color: var(--color-neutral-white);
+    --scheme-accent-color: var(--color-neutral-white);
+}
+
+.scheme-3 {
+    --scheme-text-color: var(--color-neutral-darkest);
+    --scheme-background-color: var(--color-clairvoyant-lightest);
+    --scheme-foreground-color: var(--color-clairvoyant-lightest);
+    --scheme-border-color: var(--color-neutral-darkest);
+    --scheme-accent-color: var(--color-clairvoyant);
+}
+
+.scheme-4 {
+    --scheme-text-color: var(--color-neutral-white);
+    --scheme-background-color: var(--color-neutral-darker);
+    --scheme-foreground-color: var(--color-neutral-darker);
+    --scheme-border-color: var(--color-neutral-white);
+    --scheme-accent-color: var(--color-neutral-white);
+}
