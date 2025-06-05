@@ -4,10 +4,10 @@ import './Intro.scss'
 
 function Intro() {
     return (
-        <section className="scheme-1">
-            <div className='container'>
+        <section className="home__intro scheme-1">
+            <div className='home__intro__container'>
                 <h1>Florence HomeStay<br />Stay Local</h1>
-                <div className="right">
+                <div className="home__intro__right">
                     <p>
                         Experience Florence like a local. At Florence HomeStay, we combine comfortable accommodations with insider tips, ensuring your journey in Florence is unforgettable
                     </p>
@@ -22,7 +22,9 @@ function Intro() {
                 </div>
             </div>
 
-            <img src={florenceImage} alt="Florence" />
+            <div className="home__intro__left">
+                <img src={florenceImage} alt="Florence" />
+            </div>
         </section>
     )
 }

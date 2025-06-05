@@ -1,7 +1,10 @@
-section {
+.home__intro {
     margin: 3rem auto 4rem auto;
+    height: 70vh;
+    border: 1px solid red;
+    overflow: hidden;
 
-    .container {
+    &__container {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -13,7 +16,7 @@ section {
 
         }
 
-        .right {
+        .home__intro__right {
             flex: 0.5;
 
             p {
@@ -26,7 +29,16 @@ section {
         }
     }
 
-    img {
+    &__left {
+        border: 1px solid red;
         margin: 2rem auto;
+        height: 80%;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            // TODO: Fix this
+        }
     }
 }
