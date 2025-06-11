@@ -1,0 +1,36 @@
+.feature-section {
+    padding: 4rem;
+    background-color: var(--scheme-background-color);
+    color: var(--scheme-text-color);
+
+    &__title {
+        width: 60%;
+        margin-bottom: 3rem;
+
+        span {
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-top: 1rem;
+        }
+    }
+
+    &__cards {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__cta {
+        margin-top: 3rem;
+    }
+}
+
+.feature-section__center-text {
+    text-align: center;
+
+    .feature-section__title {
+        margin: 0 auto 3rem auto;
+    }
+}

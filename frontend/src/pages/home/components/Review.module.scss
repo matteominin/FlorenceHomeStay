@@ -1,0 +1,47 @@
+.review {
+    background-color: var(--scheme-background-color);
+    color: var(--scheme-text-color);
+    text-align: center;
+    padding: 5rem 1rem;
+
+    .star__rating {
+        img {
+            height: 1rem;
+        }
+    }
+
+    .review__text {
+        margin: 1rem auto 2rem auto;
+        width: 50%;
+    }
+
+    .bottom__user {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 3rem;
+
+        img {
+            width: auto;
+            height: 2.5rem;
+            margin: 1.3rem;
+        }
+
+        &__airbnb {
+            height: 1.8rem !important;
+            padding-left: 1.3rem;
+            margin: 0 !important;
+        }
+
+        .row {
+            background-color: #fff;
+            width: 2px;
+            height: 100%;
+            margin-left: 1rem;
+        }
+
+        &__info {
+            font-size: 0.8rem;
+        }
+    }
+}

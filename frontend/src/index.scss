@@ -151,7 +151,7 @@ h1 {
     letter-spacing: -0.2rem;
 
     @media (min-width: #{$breakpoint-tablet}) {
-        // Use Sass variable for breakpoint
+
         font-size: var(--h1-font-size-desktop);
         line-height: var(--h1-line-height-desktop);
     }
@@ -160,6 +160,8 @@ h1 {
 h2 {
     font-size: var(--h2-font-size-mobile);
     line-height: var(--h2-line-height-mobile);
+    font-weight: var(--font-weight-normal);
+    letter-spacing: -0.2rem;
 
     @media (min-width: #{$breakpoint-tablet}) {
         font-size: var(--h2-font-size-desktop);
@@ -170,40 +172,11 @@ h2 {
 h3 {
     font-size: var(--h3-font-size-mobile);
     line-height: var(--h3-line-height-mobile);
+    font-weight: var(--font-weight-medium);
 
     @media (min-width: #{$breakpoint-tablet}) {
         font-size: var(--h3-font-size-desktop);
         line-height: var(--h3-line-height-desktop);
-    }
-}
-
-h4 {
-    font-size: var(--h4-font-size-mobile);
-    line-height: var(--h4-line-height-mobile);
-
-    @media (min-width: #{$breakpoint-tablet}) {
-        font-size: var(--h4-font-size-desktop);
-        line-height: var(--h4-line-height-desktop);
-    }
-}
-
-h5 {
-    font-size: var(--h5-font-size-mobile);
-    line-height: var(--h5-line-height-mobile);
-
-    @media (min-width: #{$breakpoint-tablet}) {
-        font-size: var(--h5-font-size-desktop);
-        line-height: var(--h5-line-height-desktop);
-    }
-}
-
-h6 {
-    font-size: var(--h6-font-size-mobile);
-    line-height: var(--h6-line-height-mobile);
-
-    @media (min-width: #{$breakpoint-tablet}) {
-        font-size: var(--h6-font-size-desktop);
-        line-height: var(--h6-line-height-desktop);
     }
 }
 
@@ -372,6 +345,10 @@ button {
 
 img {
     border-radius: 1rem;
+}
+
+span {
+    font-weight: var(--font-weight-semi-bold);
 }
 
 /* --- END: CSS Reset or Normalize --- */
