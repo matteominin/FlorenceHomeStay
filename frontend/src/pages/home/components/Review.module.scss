@@ -7,6 +7,8 @@
     .star__rating {
         img {
             height: 1rem;
+            border-radius: 0;
+            margin: 0.1rem;
         }
     }
 
@@ -25,12 +27,11 @@
             width: auto;
             height: 2.5rem;
             margin: 1.3rem;
+            border-radius: 0;
         }
 
         &__airbnb {
             height: 1.8rem !important;
-            padding-left: 1.3rem;
-            margin: 0 !important;
         }
 
         .row {

@@ -1,4 +1,57 @@
 footer {
     background-color: var(--scheme-background-color);
     color: var(--scheme-text-color);
+    padding: 4rem;
+
+    .upper {
+        display: flex;
+        justify-content: space-between;
+
+        img {
+            border-radius: 0;
+        }
+
+        a {
+            display: block;
+            color: var(--scheme-text-color);
+        }
+
+        .logo {
+            margin-bottom: 2rem;
+        }
+
+        .right {
+            &__field {
+                margin-bottom: 1.5rem;
+            }
+
+            .social {
+                display: flex;
+
+                a {
+                    margin-right: 1rem;
+                }
+            }
+        }
+
+        .left {
+            margin-right: 4rem;
+
+            a {
+                text-decoration: none;
+                margin: 1rem;
+            }
+        }
+    }
+
+    .row {
+        height: 2px;
+        width: 100%;
+        background-color: var(--scheme-text-color);
+        margin: 3rem 0 2rem 0;
+    }
+
+    .rights {
+        font-size: 0.8rem;
+    }
 }
