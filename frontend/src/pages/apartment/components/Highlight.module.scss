@@ -1,0 +1,34 @@
+.highlight {
+    background-color: var(--scheme-background-color);
+    color: var(--scheme-text-color);
+    padding: 6rem 4rem 4rem 4rem;
+    display: flex;
+
+
+    .left {
+        margin-right: 2rem;
+
+        h3 {
+            font-size: 1.8rem;
+        }
+    }
+
+    .right {
+        margin-left: 4rem;
+
+        .intro {
+            margin-bottom: 2rem;
+        }
+
+        .feature {
+            display: flex;
+            margin-top: 1rem;
+
+            img {
+                width: 1rem;
+                object-fit: contain;
+                margin-right: 1rem;
+            }
+        }
+    }
+}

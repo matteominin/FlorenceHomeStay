@@ -5,6 +5,9 @@ import StrengthPoints from './components/StrengthPoints';
 import Gallery from './components/Gallery';
 import InfoSection from '../../components/infoSection/InfoSection';
 import FeatureSection from '../../components/featureSection/FeatureSection';
+import Highlight from './components/Highlight';
+import Parking from './components/Parking';
+import Footer from '../../components/footer/Footer';
 
 // Images
 import room1 from '../../assets/apartment/room-signoria.png';
@@ -49,6 +52,10 @@ const Apartment = () => {
                 cta="Book Your Stay Now!"
                 textAlign="center"
             />
+
+            <Highlight />
+            <Parking />
+            <Footer />
         </div>
     )
 }

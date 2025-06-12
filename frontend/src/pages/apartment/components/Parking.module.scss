@@ -1,0 +1,31 @@
+.parking {
+    background-color: var(--scheme-background-color);
+    color: var(--scheme-text-color);
+    padding: 6rem 4rem 4rem 4rem;
+    display: flex;
+
+
+    .left {
+        flex: 0.6;
+        margin-right: 3rem;
+
+        img {
+            border-radius: 0;
+            width: 3rem;
+        }
+
+        p {
+            margin: 1rem 0;
+            width: 90%;
+        }
+    }
+
+    .right {
+        flex: 0.4;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
