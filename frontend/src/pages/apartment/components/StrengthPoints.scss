@@ -1,0 +1,25 @@
+.strength-points {
+    background-color: var(--scheme-background-color);
+    color: var(--scheme-text-color);
+
+    text-align: center;
+    padding: 6rem 2rem 4rem 2rem;
+
+    &__intro {
+        width: 60%;
+        margin: 0 auto;
+
+        h2 {
+            margin: 1rem 0;
+        }
+
+        p {
+            margin-bottom: 3rem;
+        }
+    }
+
+    &__cards {
+        display: flex;
+        margin-bottom: 4rem;
+    }
+}

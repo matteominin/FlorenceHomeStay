@@ -8,16 +8,16 @@ const Footer = () => {
     return (
         <footer className='scheme-4'>
             <div className="upper">
-                <div className="right">
+                <div className="left">
                     <a className='logo' href="/">
                         <img src={logo} alt="FlorenceHomeStay logo" />
                     </a>
-                    <div className="right__field">
+                    <div className="left__field">
                         <p>Address:</p>
                         <p>Via Roma 1, 50100 Florence, Italy</p>
                     </div>
 
-                    <div className="right__field">
+                    <div className="left__field">
                         <p>Contact:</p>
                         <a href="tel:0551234567">055 1234567</a>
                         <a href='mailto:booking@florencehomestay.com'>
@@ -25,7 +25,7 @@ const Footer = () => {
                         </a>
                     </div>
 
-                    <div className="right__field social">
+                    <div className="left__field social">
                         <a href="#">
                             <img src={facebookIcon} alt="Facebook" />
                         </a>
@@ -38,7 +38,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="left">
+                <div className="right">
                     <a href="/apartment">Apartment</a>
                     <a href="#">Travel Tips</a>
                     <a href="#">About Us</a>

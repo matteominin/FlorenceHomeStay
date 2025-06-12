@@ -35,7 +35,7 @@ const FeatureSection = ({
             </div>
 
             <div className="feature-section__cta">
-                <Button variant='outline'>
+                <Button variant='outlined'>
                     <a href={redirect}>{cta}</a>
                 </Button>
             </div>

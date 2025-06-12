@@ -15,7 +15,7 @@ function Intro() {
                         <Button>
                             <a href="/apartment">Discover The Apartment</a>
                         </Button>
-                        <Button variant='outline'>
+                        <Button variant='outlined'>
                             <a href="#">Book Your Stay!</a>
                         </Button>
                     </div>

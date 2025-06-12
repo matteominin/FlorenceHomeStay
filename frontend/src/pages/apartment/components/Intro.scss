@@ -1,0 +1,28 @@
+.apartment-intro {
+    display: flex;
+    margin: 4rem auto;
+    align-items: center;
+
+    .left {
+        flex: 0.6;
+        padding-right: 5rem;
+
+        span {
+            display: block;
+            margin: 1rem 0;
+        }
+
+        p {
+            margin: 1rem 0 2rem 0;
+        }
+    }
+
+    .right {
+        flex: 0.4;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
