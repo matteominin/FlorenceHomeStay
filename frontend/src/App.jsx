@@ -6,7 +6,7 @@ import TravelTips from "./pages/travelTips/TravelTips.jsx";
 function App() {
 
   return (
-    <BrowserRouter basename="/FlorenceHomeStay">
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/apartment" element={<Apartment />} />
