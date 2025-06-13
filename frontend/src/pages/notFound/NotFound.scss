@@ -1,0 +1,29 @@
+.not-found {
+    min-height: 100vh;
+    background: #f5f6fa;
+    display: flex;
+    flex-direction: column;
+
+    &__content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 3rem 1rem;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        color: #222;
+        margin-bottom: 1rem;
+        font-weight: 700;
+    }
+
+    p {
+        color: #555;
+        margin-bottom: 2rem;
+        font-size: 1.2rem;
+    }
+}
