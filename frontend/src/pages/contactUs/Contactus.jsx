@@ -5,7 +5,7 @@ const ContactUs = () => {
     return (
         <div className="contact-us">
             <Header />
-            ContactUs
+            ContactUs page
         </div>
     )
 }
