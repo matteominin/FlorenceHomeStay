@@ -17,3 +17,25 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .gallery {
+        padding: 4rem 2rem;
+
+        &__images {
+            img {
+                width: 40%;
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .gallery {
+        &__images {
+            img {
+                margin: 0.5rem;
+            }
+        }
+    }
+}

@@ -39,9 +39,9 @@ const StrengthPoints = () => {
                 />
             </div>
 
-            <Button variant='outlined'>
+            {/* <Button variant='outlined'>
                 <a href="#">Learn More</a>
-            </Button>
+            </Button> */}
         </div>
     )
 }

@@ -45,3 +45,41 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .blog-slide-card {
+        width: 18rem;
+        margin-right: 2rem;
+
+        h3 {
+            font-size: 1.2rem;
+        }
+
+        a {
+            font-size: 0.9rem;
+
+            img {
+                width: 0.4rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-slide-card {
+        width: 16rem;
+        margin-right: 1rem;
+
+        h3 {
+            font-size: 1.1rem;
+        }
+
+        a {
+            font-size: 0.8rem;
+
+            img {
+                width: 0.3rem;
+            }
+        }
+    }
+}

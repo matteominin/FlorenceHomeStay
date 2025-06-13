@@ -20,3 +20,36 @@
         font-size: 0.8rem;
     }
 }
+
+@media (max-width: 750px) {
+    .card {
+        width: 50%;
+        max-width: 30rem;
+        margin: 1rem auto;
+        padding: 0 2rem;
+
+        img {
+            width: 2rem;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .card {
+        width: 100%;
+        max-width: 30rem;
+        margin: 1rem auto;
+
+        img {
+            width: 2rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+        }
+    }
+}

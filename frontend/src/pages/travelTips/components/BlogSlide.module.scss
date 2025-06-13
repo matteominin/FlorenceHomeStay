@@ -90,3 +90,46 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .blog-slide {
+        padding: 4rem 0rem 4rem 2rem;
+
+        .upper {
+            h2 {
+                font-size: 1.5rem;
+                letter-spacing: 0;
+            }
+        }
+
+        .cards {
+            padding-bottom: 1rem;
+        }
+
+        .lower {
+            .buttons-container {
+                margin-right: 2rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .blog-slide {
+        .upper {
+            h2 {
+                font-size: 1.3rem;
+            }
+        }
+
+        .cards {
+            padding-bottom: 0.5rem;
+        }
+
+        .lower {
+            .buttons-container {
+                margin-right: 1rem;
+            }
+        }
+    }
+}

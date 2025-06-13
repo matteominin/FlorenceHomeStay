@@ -3,7 +3,7 @@
     color: var(--scheme-text-color);
 
     text-align: center;
-    padding: 6rem 2rem 4rem 2rem;
+    padding: 6rem 2rem 2rem 2rem;
 
     &__intro {
         width: 60%;
@@ -21,5 +21,17 @@
     &__cards {
         display: flex;
         margin-bottom: 4rem;
+    }
+}
+
+@media (max-width: 750px) {
+    .strength-points__cards {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 600px) {
+    .strength-points__intro {
+        width: 80%;
     }
 }

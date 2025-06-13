@@ -1,6 +1,7 @@
 .apartment-intro {
     display: flex;
-    margin: 4rem auto;
+    margin: 4rem auto 2rem auto;
+    padding: 0 2rem;
     align-items: center;
 
     .left {
@@ -23,6 +24,39 @@
         img {
             width: 100%;
             height: auto;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .apartment-intro {
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+
+        .left {
+            flex: 1;
+            padding-right: 0;
+            text-align: center;
+
+            span {
+                margin: 0.5rem 0;
+            }
+
+            p {
+                margin: 1rem 0;
+            }
+        }
+
+        .right {
+            flex: 1;
+            margin-top: 2rem;
+
+            img {
+                width: 100%;
+                height: auto;
+                max-height: 30rem;
+            }
         }
     }
 }

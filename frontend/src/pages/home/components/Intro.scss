@@ -12,6 +12,7 @@
 
         h1 {
             flex: 0.5;
+            padding-right: 2rem;
         }
 
         .home__intro__right {
@@ -34,6 +35,42 @@
             width: 100%;
             object-fit: contain;
             object-position: top;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .home__intro {
+        br {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .home__intro {
+        text-align: left;
+
+        br {
+            display: block;
+        }
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            .home__intro__right {
+                margin-top: 2rem;
+
+                .cta>button:first-of-type {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        &__left {
+            margin-top: 0;
         }
     }
 }
