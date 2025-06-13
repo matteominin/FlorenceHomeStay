@@ -41,8 +41,8 @@ const Footer = () => {
                 <div className="right">
                     <a href="/apartment">Apartment</a>
                     <a href="/travel-tips">Travel Tips</a>
-                    <a href="#">About Us</a>
-                    <a href="#">Contact Us</a>
+                    <a href="/about-us">About Us</a>
+                    <a href="/contact-us">Contact Us</a>
                 </div>
             </div>
             <div className="row"></div>
