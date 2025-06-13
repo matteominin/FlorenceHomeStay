@@ -367,11 +367,6 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* --- END: Base Body Styles --- */
-
-
-/* --- START: Color Scheme Definitions (from _color-schemes.scss map generation) --- */
-/* These classes define the CSS variables for each scheme */
 .scheme-1 {
     --scheme-text-color: var(--color-neutral-darkest);
     --scheme-background-color: var(--color-neutral-white);
