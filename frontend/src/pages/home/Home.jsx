@@ -47,6 +47,7 @@ function Home() {
                         description: "Accommodating up to 6 guests, Florence HomeStay is the perfect choice for families, couples, or small groups seeking an authentic Florentine experience."
                     }
                 ]}
+                redirect="/apartment"
                 cta="Discover The Apartment"
             />
 
@@ -77,7 +78,7 @@ function Home() {
                         description: "Read our guide, we'll suggest you the best places where to eat and drink as a local, no tourist scams."
                     }
                 ]}
-                redirect="#"
+                redirect="/travel-tips"
                 textAlign="center"
             />
 

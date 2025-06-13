@@ -19,6 +19,9 @@ function Header() {
 
                 <ul className='desktop-nav'>
                     <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
                         <a href="/apartment">Apartment</a>
                     </li>
                     <li>
@@ -42,6 +45,9 @@ function Header() {
 
             {/* Mobile navigation */}
             <ul className={`mobile-nav ${isMenuOpen ? 'open' : ''}`}>
+                <li>
+                    <a href="/" onClick={toggleMenu}>Home</a>
+                </li>
                 <li>
                     <a href="/apartment" onClick={toggleMenu}>Apartment</a>
                 </li>

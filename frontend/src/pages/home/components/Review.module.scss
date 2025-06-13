@@ -46,3 +46,29 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .review {
+        .review__text {
+            width: 90%;
+        }
+
+        .bottom__user {
+            flex-direction: column;
+            align-items: center;
+            margin-top: 3rem;
+
+            img {
+                margin: 0.5rem;
+            }
+
+            &__airbnb {
+                display: none;
+            }
+
+            &__info {
+                text-align: center;
+            }
+        }
+    }
+}

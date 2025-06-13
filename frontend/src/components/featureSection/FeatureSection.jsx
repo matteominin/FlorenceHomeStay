@@ -8,7 +8,7 @@ const FeatureSection = ({
     title,
     description,
     featureSections = [],
-    redirect = "#",
+    redirect,
     cta = "Learn More",
     textAlign = ""
 }) => {
