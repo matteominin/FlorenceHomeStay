@@ -14,7 +14,7 @@ const BlogSlideCard = ({ color }) => {
 
             <h3>Blog title heading will go here</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at erat in leo facilisis aliquet.</p>
-            <a href="#">
+            <a href="travel-tips/684d693ccbf7c330d12f159d">
                 Read more
                 <img
                     src={rightArrowIcon}
