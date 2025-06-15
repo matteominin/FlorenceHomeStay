@@ -2,19 +2,25 @@ import styles from './BlogSlideCard.module.scss';
 import placeholderImage from '../../../assets/travelTips/placeholder.png'
 import rightArrowIcon from '../../../assets/travelTips/right-arrow.png';
 
-const BlogSlideCard = ({ color }) => {
+const BlogSlideCard = ({ id, imgSrc, imgAlt, readingTime, title, text, tags, color }) => {
     return (
         <div className={styles['blog-slide-card']}>
-            <img src={placeholderImage} alt="" />
+            <img src={imgSrc || placeholderImage} alt={imgAlt || ""} /> {/* TODO: check alt in db */}
 
             <div className={styles.info}>
-                <span>Category</span>
-                <p>5 min read</p>
+                {tags && tags.length > 0 && (
+                    <span className={styles.tags}>
+                        {tags.map((tag, index) => (
+                            <span key={index} className={styles.tag}>{tag}</span>
+                        ))}
+                    </span>
+                )}
+                <p>{readingTime} min read</p>
             </div>
 
-            <h3>Blog title heading will go here</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at erat in leo facilisis aliquet.</p>
-            <a href="travel-tips/684d693ccbf7c330d12f159d">
+            <h3>{title}</h3>
+            <p>{text}</p>
+            <a href={`travel-tips/${id}`}>
                 Read more
                 <img
                     src={rightArrowIcon}

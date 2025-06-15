@@ -1,93 +1,70 @@
-import { useRef, useState, useEffect } from 'react';
 import styles from './BlogSlide.module.scss';
 import BlogSlideCard from './BlogSlideCard.jsx';
 import longArrow from '../../../assets/travelTips/long-arrow.png';
 
-const BlogSlide = ({ className = "" }) => {
-    const cardsContainerRef = useRef(null);
-    const [currentPage, setCurrentPage] = useState(0);
-    const [totalPages, setTotalPages] = useState(0);
+import { useHorizontalScroll } from '../hooks/useHorizontalScroll.js';
+import { useArticlesByTag } from '../hooks/useArticlesByTag.js';
 
+const API_URL = import.meta.env.VITE_API_URL; // Required for image URLs
 
-    const updateDots = () => {
-        if (cardsContainerRef.current) {
-            const container = cardsContainerRef.current;
-            const { scrollLeft, clientWidth, scrollWidth } = container;
+const BlogSlide = ({
+    className = "",
+    tag,
+    title = "Short heading goes here",
+    description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+}) => {
+    const {
+        containerRef,
+        currentPage,
+        totalPages,
+        scrollLeft,
+        scrollRight,
+        scrollToPage,
+    } = useHorizontalScroll();
 
-            const calculatedTotalPages = Math.ceil(scrollWidth / clientWidth);
-            setTotalPages(calculatedTotalPages);
+    const { articles, loading, error } = useArticlesByTag(tag);
 
-            const calculatedCurrentPage = Math.round(scrollLeft / clientWidth);
-            setCurrentPage(calculatedCurrentPage);
-        }
-    };
+    if (loading) {
+        return <section className={`${styles['blog-slide']} ${className}`}><p>Loading articles...</p></section>;
+    }
 
-    useEffect(() => {
-        const container = cardsContainerRef.current;
+    if (error) {
+        return <section className={`${styles['blog-slide']} ${className}`}><p>Error: {error.message}</p></section>;
+    }
 
-        if (container) {
-            updateDots();
-
-            container.addEventListener('scroll', updateDots);
-            window.addEventListener('resize', updateDots);
-
-            return () => {
-                container.removeEventListener('scroll', updateDots);
-                window.removeEventListener('resize', updateDots);
-            };
-        }
-    }, []);
-
-    const scrollCards = (direction) => {
-        if (cardsContainerRef.current) {
-            const container = cardsContainerRef.current;
-            const scrollAmount = container.clientWidth;
-
-            if (direction === 'left') {
-                container.scrollBy({
-                    left: -scrollAmount,
-                    behavior: 'smooth'
-                });
-            } else if (direction === 'right') {
-                container.scrollBy({
-                    left: scrollAmount,
-                    behavior: 'smooth'
-                });
-            }
-        }
-    };
-
-    const scrollToPage = (pageIndex) => {
-        if (cardsContainerRef.current) {
-            const container = cardsContainerRef.current;
-            container.scrollTo({
-                left: pageIndex * container.clientWidth,
-                behavior: 'smooth'
-            });
-            setCurrentPage(pageIndex);
-        }
-    };
+    const articlesToDisplay = articles || [];
 
     return (
         <section className={`${styles['blog-slide']} ${className}`}>
             <div className={styles.upper}>
-                <span>Blog</span>
-                <h2>Short heading goes here</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <span>{tag}</span>
+                <h2>{title}</h2>
+                <p>{description}</p>
             </div>
 
-            <div className={styles.cards} ref={cardsContainerRef}>
-                {Array.from({ length: 10 }).map((_, index) => (
-                    <BlogSlideCard
-                        key={index}
-                        color={className.includes('scheme-2') ? 'white' : 'black'}
-                    />
-                ))}
+            <div className={styles.cards} ref={containerRef}>
+                {articlesToDisplay.length > 0 ? (
+                    articlesToDisplay.map((article) => (
+                        <BlogSlideCard
+                            key={article.id}
+                            id={article.id}
+                            imgSrc={`${API_URL}${article.image?.url}`}
+                            imgAlt={article.image?.alt || article.title} // TODO: add alt on db
+                            title={article.title}
+                            text={article.summary}
+                            readingTime={article.readingTime}
+                            tags={article.tags}
+                            color={className.includes('scheme-2') ? 'white' : 'black'}
+                        />
+                    ))
+                ) : (
+                    <p className={styles.noArticles}>No articles found for this tag.</p>
+                )}
             </div>
 
             <div className={styles.lower}>
                 <div className={styles['dots-container']}>
-                    {Array.from({ length: totalPages - 1 }).map((_, index) => (
+                    {totalPages > 1 && Array.from({ length: totalPages }).map((_, index) => (
                         <button
                             key={index}
                             className={`${styles.dot} ${index === currentPage ? styles.active : ''}`}
@@ -99,8 +76,9 @@ const BlogSlide = ({ className = "" }) => {
 
                 <div className={styles['buttons-container']}>
                     <button
-                        onClick={() => scrollCards('left')}
+                        onClick={scrollLeft}
                         aria-label="Scroll left"
+                        disabled={currentPage === 0}
                     >
                         <img
                             style={className.includes('scheme-2') ? { filter: 'invert(1)' } : {}}
@@ -110,8 +88,9 @@ const BlogSlide = ({ className = "" }) => {
                     </button>
 
                     <button
-                        onClick={() => scrollCards('right')}
+                        onClick={scrollRight}
                         aria-label="Scroll right"
+                        disabled={currentPage === totalPages - 1 || totalPages <= 1}
                     >
                         <img
                             style={className.includes('scheme-2') ? { filter: 'invert(1)' } : {}}

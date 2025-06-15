@@ -23,7 +23,7 @@ const FeatureSection = ({
             </div>
 
             <div className="feature-section__cards">
-                {featureSections.map((section, index) => (
+                {featureSections.slice(0, 3).map((section, index) => (
                     <FeatureSectionCard
                         key={index}
                         img={section.img}

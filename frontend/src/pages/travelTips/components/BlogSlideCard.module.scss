@@ -9,14 +9,16 @@
 
     .info {
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
 
-        span {
-            padding: 0rem 0.4rem;
+        .tag {
+            padding: .1rem 1rem;
             font-size: 0.8rem;
             border: 2px solid var(--scheme-text-color);
             border-radius: 3rem;
             margin-right: 1rem;
+            font-weight: normal;
         }
 
         p {

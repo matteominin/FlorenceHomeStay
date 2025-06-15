@@ -26,3 +26,4 @@ function App() {
 }
 
 export default App
+// TODO: add main categroy to article 
