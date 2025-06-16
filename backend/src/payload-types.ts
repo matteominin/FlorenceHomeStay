@@ -168,6 +168,10 @@ export interface Article {
     [k: string]: unknown;
   };
   tags?: (string | Tag)[] | null;
+  /**
+   * This tag will be used to categorize the article in the travel-tips page.
+   */
+  mainTag?: (string | null) | Tag;
   updatedAt: string;
   createdAt: string;
 }
@@ -177,7 +181,7 @@ export interface Article {
  */
 export interface Media {
   id: string;
-  'Image description': string;
+  imgAlt: string;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -223,6 +227,8 @@ export interface Media {
 export interface Tag {
   id: string;
   tag: string;
+  title: string;
+  description: string;
   updatedAt: string;
   createdAt: string;
 }
@@ -319,6 +325,7 @@ export interface ArticlesSelect<T extends boolean = true> {
   image?: T;
   content?: T;
   tags?: T;
+  mainTag?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -327,7 +334,7 @@ export interface ArticlesSelect<T extends boolean = true> {
  * via the `definition` "media_select".
  */
 export interface MediaSelect<T extends boolean = true> {
-  'Image description'?: T;
+  imgAlt?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -380,6 +387,8 @@ export interface MediaSelect<T extends boolean = true> {
  */
 export interface TagsSelect<T extends boolean = true> {
   tag?: T;
+  title?: T;
+  description?: T;
   updatedAt?: T;
   createdAt?: T;
 }

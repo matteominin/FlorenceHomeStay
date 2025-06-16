@@ -62,5 +62,15 @@ export const Articles: CollectionConfig = {
                 allowCreate: true
             },
         },
+        {
+            name: 'mainTag',
+            type: 'relationship',
+            relationTo: 'tags',
+            hasMany: false,
+            admin: {
+                allowCreate: true,
+                description: "This tag will be used to categorize the article in the travel-tips page.",
+            },
+        },
     ]
 }

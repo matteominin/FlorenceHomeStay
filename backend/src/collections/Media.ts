@@ -32,7 +32,8 @@ export const Media: CollectionConfig = {
     },
     fields: [
         {
-            name: 'Image description',
+            name: 'imgAlt',
+            label: 'Image Description',
             type: 'text',
             required: true
         },

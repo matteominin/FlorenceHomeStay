@@ -3,6 +3,7 @@ import Home from "./pages/home/Home.jsx"
 import Apartment from "./pages/apartment/Apartment.jsx";
 import TravelTips from "./pages/travelTips/TravelTips.jsx";
 import Article from "./pages/article/Article.jsx";
+import ApartmentInstructions from "./pages/apartmentInstructions/apartmentInstructions.jsx";
 import AboutUs from "./pages/aboutUs/AboutUs.jsx";
 import ContactUs from "./pages/contactUs/ContactUs.jsx";
 import NotFound from "./pages/notFound/NotFound.jsx";
@@ -16,6 +17,7 @@ function App() {
         <Route path="/apartment" element={<Apartment />} />
         <Route path="/travel-tips" element={<TravelTips />} />
         <Route path="/travel-tips/:id" element={<Article />} />
+        <Route path="/apartment-instructions" element={<ApartmentInstructions />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/contact-us" element={<ContactUs />} />
 
@@ -26,4 +28,3 @@ function App() {
 }
 
 export default App
-// TODO: add main categroy to article 

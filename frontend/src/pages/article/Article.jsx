@@ -2,6 +2,9 @@ import styles from './Article.module.scss';
 
 import Header from '../../components/header/Header';
 import Explore from './components/Explore';
+import Button from '../../components/button/Button';
+import Footer from '../../components/footer/Footer';
+import Loading from '../../components/loading/Loading';
 
 import { useParams } from 'react-router';
 import useArticle from './hooks/useArticle';
@@ -17,18 +20,43 @@ const Article = () => {
     const { htmlContent, loading: htmlLoading, error: htmlError } = useLexicalToHtml(article?.content);
     const { newestArticles, loading: loadingNewest, error: errorNewest } = useNewestArticles(id);
 
-
-    // TODO: Handle loading and error states
     if (loading) {
-        return <div className={styles.loading}>Loading...</div>;
+        return (
+            <div className={styles['article-page']}>
+                <Header />
+                <Loading message="Loading article..." />
+            </div>
+        );
     }
 
     if (error) {
-        return <div className={styles.error}>{error}</div>;
+        return (
+            <div className={styles['article-page']}>
+                <Header />
+                <div className={styles['error-container']}>
+                    <p>Error loading article: {error}</p>
+                    <p>Please check the URL or return to the homepage.</p>
+                    <Button>
+                        <a href="/" className={styles['home-link']}>Go to Homepage</a>
+                    </Button>
+                </div>
+            </div>
+        );
     }
 
     if (!article) {
-        return <div className={styles.error}>Article not found</div>;
+        return (
+            <div className={styles['article-page']}>
+                <Header />
+                <div className={styles['error-container']}>
+                    <p>Article not found.</p>
+                    <p>Please check the URL or return to the homepage.</p>
+                    <Button>
+                        <a href="/" className={styles['home-link']}>Go to Homepage</a>
+                    </Button>
+                </div>
+            </div>
+        );
     }
 
     return (
@@ -82,10 +110,10 @@ const Article = () => {
                 </div>
 
 
-                {loadingNewest ? (  // TODO: finish loading and error states for newest articles
-                    <p>Loading other articles...</p>
+                {loadingNewest ? (
+                    <Loading message="Loading related articles..." />
                 ) : errorNewest ? (
-                    <p className={styles.error}>{errorNewest}</p>
+                    <p className={styles.error}>We are sorry, we can't find any article.</p>
                 ) : (
                     <Explore
                         className="scheme-2"
@@ -97,8 +125,11 @@ const Article = () => {
                     />
                 )}
             </div>
+            <Footer />
         </div>
     );
 };
 
 export default Article;
+
+// TODO: style lists 

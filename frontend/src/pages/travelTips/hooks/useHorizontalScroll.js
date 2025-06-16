@@ -10,7 +10,7 @@ export const useHorizontalScroll = (loading) => {
 
         const { scrollLeft, clientWidth, scrollWidth } = containerRef.current;
         setTotalPages(Math.ceil(scrollWidth / clientWidth));
-        setCurrentPage(Math.round(scrollLeft / clientWidth));
+        setCurrentPage(Math.ceil(scrollLeft / clientWidth));
     }, []);
 
     useEffect(() => {

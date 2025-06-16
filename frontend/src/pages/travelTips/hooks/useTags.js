@@ -19,10 +19,7 @@ const useTags = () => {
                 }
 
                 const data = await response.json();
-                setTags(data.docs.map(tag => ({
-                    id: tag.id,
-                    name: tag.tag
-                })));
+                setTags(data.docs);
             } catch (err) {
                 console.error('Error fetching tags:', err);
                 setError('Failed to load tags.');

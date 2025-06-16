@@ -7,11 +7,9 @@ import { useArticlesByTag } from '../hooks/useArticlesByTag.js';
 
 const BlogSlide = ({
     className = "",
-    tag,
-    title = "Short heading goes here",
-    description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    content
 }) => {
-    const { articles, loading, error } = useArticlesByTag(tag);
+    const { articles, loading, error } = useArticlesByTag(content.id);
 
     const {
         containerRef,
@@ -35,9 +33,9 @@ const BlogSlide = ({
     return (
         <section className={`${styles['blog-slide']} ${className}`}>
             <div className={styles.upper}>
-                <span>{tag}</span>
-                <h2>{title}</h2>
-                <p>{description}</p>
+                <span>{content.tag}</span>
+                <h2>{content.title}</h2>
+                <p>{content.description}</p>
             </div>
 
             <div className={styles.cards} ref={containerRef}>

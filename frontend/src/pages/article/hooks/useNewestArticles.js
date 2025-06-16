@@ -9,7 +9,7 @@ const useNewestArticles = (id) => {
     const [error, setError] = useState(null);
 
     const queryParams = {
-        sort: '-createdAt',
+        sort: '-publishedDate',
         limit: 3,
         where: {
             id: {
@@ -23,7 +23,6 @@ const useNewestArticles = (id) => {
         { addQueryPrefix: true }
     )
 
-    // TODO: fetch articles different from the current article
     useEffect(() => {
         const fetchNewestArticles = async () => {
             try {

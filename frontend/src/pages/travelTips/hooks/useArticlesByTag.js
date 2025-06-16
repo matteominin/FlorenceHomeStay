@@ -3,14 +3,14 @@ import { stringify } from 'qs-esm';
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-export const useArticlesByTag = (tagName) => {
+export const useArticlesByTag = (tagId) => {
     const [articles, setArticles] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
         const fetchArticles = async () => {
-            if (!tagName) {
+            if (!tagId) {
                 setArticles([]);
                 setLoading(false);
                 return;
@@ -20,23 +20,10 @@ export const useArticlesByTag = (tagName) => {
                 setLoading(true);
                 setError(null);
 
-                // Fetch tag ID
-                const tagRes = await fetch(`${API_URL}/api/tags?where[tag][equals]=${tagName}`);
-                if (!tagRes.ok) throw new Error(`Failed to fetch tag "${tagName}"`);
-                const tagData = await tagRes.json();
-
-                if (!tagData.docs || tagData.docs.length === 0) {
-                    console.warn(`Tag "${tagName}" not found. No articles will be displayed.`);
-                    setArticles([]);
-                    setLoading(false);
-                    return;
-                }
-                const tagId = tagData.docs[0].id;
-
                 // Fetch articles by tag ID
-                const articleWhereQuery = { tags: { equals: tagId } };
+                const articleWhereQuery = { mainTag: { equals: tagId } };
                 const stringifiedQuery = stringify(
-                    { where: articleWhereQuery, limit: 10, sort: '-createdAt', depth: 1 },
+                    { where: articleWhereQuery, limit: 10, sort: '-publishedDate', depth: 1 },
                     { addQueryPrefix: true },
                 );
 
@@ -54,7 +41,7 @@ export const useArticlesByTag = (tagName) => {
                 })));
 
             } catch (err) {
-                console.error(`Error fetching articles for tag "${tagName}":`, err);
+                console.error(`Error fetching articles for tag "${tagId}":`, err);
                 setError(err);
                 setArticles([]);
             } finally {
@@ -63,7 +50,7 @@ export const useArticlesByTag = (tagName) => {
         };
 
         fetchArticles();
-    }, [tagName]);
+    }, [tagId]);
 
     return { articles, loading, error };
 };

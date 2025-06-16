@@ -2,3 +2,14 @@
     max-width: 80rem;
     margin: auto;
 }
+
+.error {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    button {
+        margin-top: 1rem;
+    }
+}

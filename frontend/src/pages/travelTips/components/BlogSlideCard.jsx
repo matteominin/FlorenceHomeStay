@@ -7,7 +7,7 @@ const API_URL = import.meta.env.VITE_API_URL;
 const BlogSlideCard = ({ article, color }) => {
     return (
         <div className={styles['blog-slide-card']}>
-            <img src={`${API_URL}${article.image?.url}` || placeholderImage} alt={article.image?.alt || ""} /> {/* TODO: check alt in db */}
+            <img src={`${API_URL}${article.image?.url}` || placeholderImage} alt={article.image?.imgAlt || article.title} />
 
             <div className={styles.info}>
                 {article.tags?.length > 0 &&
