@@ -12,13 +12,22 @@
         flex-wrap: wrap;
         align-items: center;
 
+        p,
         .tag {
-            padding: .1rem 1rem;
+            margin: 0.5rem 0.5rem 0.2rem 0;
+        }
+
+        .tag {
+            display: block;
+            padding: 0.1rem 1rem;
             font-size: 0.8rem;
             border: 2px solid var(--scheme-text-color);
             border-radius: 3rem;
+            font-weight: medium;
+        }
+
+        .tag:last-of-type {
             margin-right: 1rem;
-            font-weight: normal;
         }
 
         p {

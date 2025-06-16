@@ -144,11 +144,19 @@ $breakpoint-large-desktop: 1440px;
 }
 
 /* Global Heading Styles (using nested media queries) */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-family-heading);
+}
+
 h1 {
     font-size: var(--h1-font-size-mobile);
     line-height: var(--h1-line-height-mobile);
     font-weight: var(--font-weight-normal);
-    letter-spacing: -0.2rem;
 
     @media (min-width: #{$breakpoint-tablet}) {
 
@@ -161,7 +169,6 @@ h2 {
     font-size: var(--h2-font-size-mobile);
     line-height: var(--h2-line-height-mobile);
     font-weight: var(--font-weight-normal);
-    letter-spacing: -0.2rem;
 
     @media (min-width: #{$breakpoint-tablet}) {
         font-size: var(--h2-font-size-desktop);
@@ -172,7 +179,7 @@ h2 {
 h3 {
     font-size: var(--h3-font-size-mobile);
     line-height: var(--h3-line-height-mobile);
-    font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-normal);
 
     @media (min-width: #{$breakpoint-tablet}) {
         font-size: var(--h3-font-size-desktop);

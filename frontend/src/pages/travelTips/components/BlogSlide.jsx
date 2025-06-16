@@ -5,14 +5,14 @@ import longArrow from '../../../assets/travelTips/long-arrow.png';
 import { useHorizontalScroll } from '../hooks/useHorizontalScroll.js';
 import { useArticlesByTag } from '../hooks/useArticlesByTag.js';
 
-const API_URL = import.meta.env.VITE_API_URL; // Required for image URLs
-
 const BlogSlide = ({
     className = "",
     tag,
     title = "Short heading goes here",
     description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 }) => {
+    const { articles, loading, error } = useArticlesByTag(tag);
+
     const {
         containerRef,
         currentPage,
@@ -20,9 +20,7 @@ const BlogSlide = ({
         scrollLeft,
         scrollRight,
         scrollToPage,
-    } = useHorizontalScroll();
-
-    const { articles, loading, error } = useArticlesByTag(tag);
+    } = useHorizontalScroll(loading);
 
     if (loading) {
         return <section className={`${styles['blog-slide']} ${className}`}><p>Loading articles...</p></section>;
@@ -43,22 +41,14 @@ const BlogSlide = ({
             </div>
 
             <div className={styles.cards} ref={containerRef}>
-                {articlesToDisplay.length > 0 ? (
+                {articlesToDisplay.length > 0 && (
                     articlesToDisplay.map((article) => (
                         <BlogSlideCard
                             key={article.id}
-                            id={article.id}
-                            imgSrc={`${API_URL}${article.image?.url}`}
-                            imgAlt={article.image?.alt || article.title} // TODO: add alt on db
-                            title={article.title}
-                            text={article.summary}
-                            readingTime={article.readingTime}
-                            tags={article.tags}
+                            article={article}
                             color={className.includes('scheme-2') ? 'white' : 'black'}
                         />
                     ))
-                ) : (
-                    <p className={styles.noArticles}>No articles found for this tag.</p>
                 )}
             </div>
 
@@ -74,7 +64,7 @@ const BlogSlide = ({
                     ))}
                 </div>
 
-                <div className={styles['buttons-container']}>
+                {totalPages > 1 && <div className={styles['buttons-container']}>
                     <button
                         onClick={scrollLeft}
                         aria-label="Scroll left"
@@ -98,7 +88,7 @@ const BlogSlide = ({
                             alt="Right arrow icon"
                         />
                     </button>
-                </div>
+                </div>}
             </div>
         </section>
     );

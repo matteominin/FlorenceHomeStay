@@ -19,7 +19,6 @@ const useTags = () => {
                 }
 
                 const data = await response.json();
-                console.log(data.docs)
                 setTags(data.docs.map(tag => ({
                     id: tag.id,
                     name: tag.tag

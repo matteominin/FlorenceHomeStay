@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect, useCallback } from 'react';
 
-export const useHorizontalScroll = () => {
+export const useHorizontalScroll = (loading) => {
     const containerRef = useRef(null);
     const [currentPage, setCurrentPage] = useState(0);
     const [totalPages, setTotalPages] = useState(0);
@@ -26,7 +26,7 @@ export const useHorizontalScroll = () => {
             container.removeEventListener('scroll', updatePagination);
             window.removeEventListener('resize', updatePagination);
         };
-    }, [updatePagination]);
+    }, [updatePagination, loading]);
 
     const scrollCards = useCallback((direction) => {
         if (!containerRef.current) return;
