@@ -3,7 +3,7 @@ import Home from "./pages/home/Home.jsx"
 import Apartment from "./pages/apartment/Apartment.jsx";
 import TravelTips from "./pages/travelTips/TravelTips.jsx";
 import Article from "./pages/article/Article.jsx";
-import ApartmentInstructions from "./pages/apartmentInstructions/apartmentInstructions.jsx";
+import ApartmentInstructions from "./pages/apartmentInstructions/ApartmentInstructions.jsx";
 import AboutUs from "./pages/aboutUs/AboutUs.jsx";
 import ContactUs from "./pages/contactUs/ContactUs.jsx";
 import NotFound from "./pages/notFound/NotFound.jsx";
