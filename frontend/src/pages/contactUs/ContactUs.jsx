@@ -11,3 +11,5 @@ const ContactUs = () => {
 }
 
 export default ContactUs
+
+// TODO: contact us page

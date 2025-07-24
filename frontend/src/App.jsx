@@ -3,6 +3,7 @@ import Home from "./pages/home/Home.jsx"
 import Apartment from "./pages/apartment/Apartment.jsx";
 import TravelTips from "./pages/travelTips/TravelTips.jsx";
 import Article from "./pages/article/Article.jsx";
+import Events from "./pages/events/Events.jsx";
 import ApartmentInstructions from "./pages/apartmentInstructions/ApartmentInstructions.jsx";
 import AboutUs from "./pages/aboutUs/AboutUs.jsx";
 import ContactUs from "./pages/contactUs/ContactUs.jsx";
@@ -17,6 +18,7 @@ function App() {
         <Route path="/apartment" element={<Apartment />} />
         <Route path="/travel-tips" element={<TravelTips />} />
         <Route path="/travel-tips/:id" element={<Article />} />
+        <Route path="/events" element={<Events />} />
         <Route path="/apartment-instructions" element={<ApartmentInstructions />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/contact-us" element={<ContactUs />} />

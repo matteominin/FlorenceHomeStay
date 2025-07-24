@@ -11,3 +11,5 @@ const AboutUs = () => {
 }
 
 export default AboutUs
+
+// TODO: about us page

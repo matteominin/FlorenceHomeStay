@@ -11,7 +11,6 @@ import Button from '../../components/button/Button.jsx'
 const TravelTips = () => {
     const { tags, loading, error } = useTags();
 
-    // TODO: Add a loading state and error handling
     if (loading) {
         return (
             <div className='travel-tips'>
@@ -56,5 +55,3 @@ const TravelTips = () => {
 }
 
 export default TravelTips
-
-// TODO: Add events

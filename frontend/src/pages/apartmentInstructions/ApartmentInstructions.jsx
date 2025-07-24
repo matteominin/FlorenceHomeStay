@@ -12,3 +12,5 @@ const ApartmentInstructions = () => {
 }
 
 export default ApartmentInstructions
+
+// TODO: apartment instructions page
