@@ -37,9 +37,6 @@ function Header() {
                         <a href="/events">Events</a>
                     </li>
                     <li>
-                        <a href="/about-us">About Us</a>
-                    </li>
-                    <li>
                         <a href="/contact-us">Contact Us</a>
                     </li>
                 </ul>
@@ -65,9 +62,6 @@ function Header() {
                 </li>
                 <li>
                     <a href="/events" onClick={toggleMenu}>Events</a>
-                </li>
-                <li>
-                    <a href="/about-us" onClick={toggleMenu}>About Us</a>
                 </li>
                 <li>
                     <a href="/contact-us" onClick={toggleMenu}>Contact Us</a>

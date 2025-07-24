@@ -66,3 +66,4 @@ const ContactUs = () => {
 export default ContactUs
 
 // TODO: update contact details and map link
+// TODO: responsiveness

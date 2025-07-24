@@ -12,6 +12,7 @@ import { Articles } from './collections/Articles'
 import { Media } from './collections/Media'
 import { Tags } from './collections/Tags'
 import { Events } from './collections/Events'
+import { VideoInstructions } from './collections/VideoInstructions'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -28,7 +29,8 @@ export default buildConfig({
     Articles,
     Media,
     Tags,
-    Events
+    Events,
+    VideoInstructions,
   ],
   editor: lexicalEditor({
     features: ({ defaultFeatures }) => [

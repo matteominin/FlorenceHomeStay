@@ -135,4 +135,5 @@ const Events = () => {
 
 export default Events;
 
-//TODO: Fix error and loading page heights
+// TODO: Fix error and loading page heights
+// TODO: Responsiveness

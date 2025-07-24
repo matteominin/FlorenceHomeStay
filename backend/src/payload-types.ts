@@ -72,6 +72,7 @@ export interface Config {
     media: Media;
     tags: Tag;
     events: Event;
+    'video-instructions': VideoInstruction;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -83,6 +84,7 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     tags: TagsSelect<false> | TagsSelect<true>;
     events: EventsSelect<false> | EventsSelect<true>;
+    'video-instructions': VideoInstructionsSelect<false> | VideoInstructionsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -252,6 +254,18 @@ export interface Event {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "video-instructions".
+ */
+export interface VideoInstruction {
+  id: string;
+  title: string;
+  videoUrl: string;
+  description?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -276,6 +290,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'events';
         value: string | Event;
+      } | null)
+    | ({
+        relationTo: 'video-instructions';
+        value: string | VideoInstruction;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -426,6 +444,17 @@ export interface EventsSelect<T extends boolean = true> {
   location?: T;
   image?: T;
   link?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "video-instructions_select".
+ */
+export interface VideoInstructionsSelect<T extends boolean = true> {
+  title?: T;
+  videoUrl?: T;
+  description?: T;
   updatedAt?: T;
   createdAt?: T;
 }
