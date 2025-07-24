@@ -259,6 +259,9 @@ export interface Event {
 export interface VideoInstruction {
   id: string;
   title: string;
+  /**
+   * Copia il link dalla barra degli indirizzi del video YouTube, copia il codice (ad esempio: https://www.youtube.com/watch?v=nJMGJ_qj7Ns) Incolla la parte finale dopo ?v= qua: https://www.youtube.com/embed/(inserisci qua la parte finale)
+   */
   videoUrl: string;
   description?: string | null;
   updatedAt: string;
