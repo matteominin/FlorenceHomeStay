@@ -11,6 +11,7 @@ import { Users } from './collections/Users'
 import { Articles } from './collections/Articles'
 import { Media } from './collections/Media'
 import { Tags } from './collections/Tags'
+import { Events } from './collections/Events'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -27,6 +28,7 @@ export default buildConfig({
     Articles,
     Media,
     Tags,
+    Events
   ],
   editor: lexicalEditor({
     features: ({ defaultFeatures }) => [

@@ -1,0 +1,159 @@
+// Timeline events
+.timelineEvent {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6rem;
+}
+
+.timelineDot {
+    position: absolute;
+    left: 50%;
+    top: 2rem;
+    transform: translateX(-50%);
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: var(--color-neutral-darker);
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.eventContent {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+
+// Content sections
+.contentLeft,
+.contentRight {
+    width: 41.666667%; // 5/12
+}
+
+.contentLeft {
+    padding-right: 2rem;
+    text-align: right;
+}
+
+.contentRight {
+    padding-left: 2rem;
+    text-align: left;
+}
+
+.spacer {
+    width: 16.666667%; // 2/12
+    display: flex;
+    justify-content: center;
+}
+
+// Date sections
+.dateLeft,
+.dateRight {
+    width: 41.666667%; // 5/12
+}
+
+.dateLeft {
+    text-align: right;
+}
+
+.dateRight {
+    text-align: left;
+}
+
+.eventDate {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: var(--color-neutral-darker);
+}
+
+.eventTime {
+    font-size: 1.125rem;
+    color: var(--color-neutral-light);
+    margin-top: 0.25rem;
+}
+
+// Event content
+.eventTitle {
+    font-size: 1.8rem;
+    color: var(--color-neutral-darker);
+    margin-bottom: 0.5rem;
+}
+
+.eventDescription {
+    max-width: 28rem;
+
+    .contentLeft & {
+        margin-left: auto;
+    }
+
+    .contentRight & {
+        margin-right: auto;
+    }
+}
+
+.description {
+    color: var(--color-neutral-dark);
+    font-size: 1rem;
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 1rem;
+
+    .contentLeft & {
+        justify-content: flex-end;
+    }
+
+    .contentRight & {
+        justify-content: flex-start;
+    }
+}
+
+// Buttons
+.learnMoreBtn {
+    padding: 0.3rem 0rem;
+    color: var(--color-clairvoyant);
+    background: transparent;
+    border: 1px solid var(--color-clairvoyant);
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.3rem 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: var(--color-clairvoyant);
+        color: var(--color-neutral-white);
+    }
+}
+
+.arrow {
+    font-size: 0.875rem;
+}
+
+// Images
+.eventImage {
+    margin-top: 2rem;
+}
+
+.eventImage {
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0.5rem;
+    }
+
+    .contentLeft & {
+        margin-left: auto;
+    }
+
+    .contentRight & {
+        margin-right: auto;
+    }
+}
