@@ -1,0 +1,59 @@
+.contactUs {
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+img {
+    border-radius: 0;
+    width: 1.3rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+    margin-top: 0.4rem;
+}
+
+a {
+    color: #000;
+    margin-top: 0.5rem;
+}
+
+.topContainer,
+.bottomContainer {
+    margin: 3rem 4rem 2rem 4rem;
+}
+
+.bottomContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 6rem;
+    height: 40vh;
+    max-height: 600px;
+
+    .left {
+        flex: 0.3;
+        margin-right: 2rem;
+    }
+
+    .map_container {
+        flex: 0.7;
+    }
+}
+
+.contactMethod {
+    margin-bottom: 3rem;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+
+    img {
+        width: 0.5rem;
+        margin-left: 0.5rem;
+    }
+}
