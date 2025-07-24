@@ -195,5 +195,3 @@ const ApartmentInstructions = () => {
 }
 
 export default ApartmentInstructions
-
-// TODO: responsiveness

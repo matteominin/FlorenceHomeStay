@@ -1,20 +1,22 @@
 .apartment-instructions {
     max-width: 80rem;
     margin: auto;
-    padding: 0 4rem;
+    padding: 0 1rem;
 
     .intro {
-        padding: 0 4rem;
+        padding: 0 1rem;
         text-align: center;
-        padding: 4rem 0;
+        padding: 2rem 0;
 
         h1 {
             flex: 0.5;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
         }
 
         p {
             flex: 0.5;
             margin-top: 0.5rem;
+            font-size: clamp(0.875rem, 2vw, 1rem);
         }
     }
 
@@ -22,11 +24,18 @@
         width: 100%;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 3rem;
+        gap: clamp(1.5rem, 3vw, 3rem);
+        padding: 0 2rem;
+        margin: 2rem 0;
     }
 
     .instructions_list .instruction {
-        width: calc(50vw - 6rem);
+        width: 100%;
+        min-width: 0;
+
+        h2 {
+            font-size: clamp(1.5rem, 2.5vw, 1.8rem);
+        }
 
         ul {
             list-style-type: disc;
@@ -34,8 +43,38 @@
             margin-top: 1rem;
         }
 
+        li {
+            font-size: clamp(0.875rem, 2vw, 1rem);
+            margin-bottom: 0.5rem;
+        }
+
         p {
             margin-top: 0.5rem;
+            font-size: clamp(0.875rem, 2vw, 1rem);
+        }
+    }
+
+    /* Mobile styles - single column */
+    @media (max-width: 768px) {
+        padding: 0 1rem;
+
+        .intro {
+            padding: 0 0.5rem;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+
+        .instructions_list {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            padding: 0 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .instructions_list .instruction {
+            ul {
+                padding-left: 1rem;
+            }
         }
     }
 }
@@ -44,16 +83,16 @@
     background-color: var(--color-clairvoyant);
     height: 2px;
     width: 80%;
-    margin: 4rem auto;
+    margin: clamp(2rem, 4vw, 4rem) auto;
 }
 
 .video_container {
-    margin-bottom: 6rem;
+    margin-bottom: clamp(3rem, 6vw, 6rem);
 }
 
 .video_section {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: clamp(2rem, 4vw, 4rem);
 }
 
 .error_message {
@@ -62,21 +101,28 @@
     color: #d9534f;
     border: 1px solid #d9534f;
     border-radius: 8px;
-    padding: 1.5rem;
+    padding: clamp(1rem, 3vw, 1.5rem);
     margin: 2rem auto;
-    max-width: 600px;
+    max-width: min(600px, 90vw);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-top: 6rem;
+    margin-top: clamp(3rem, 6vw, 6rem);
     margin-bottom: 3rem;
 
     h2 {
-        font-size: 1.5rem;
+        font-size: clamp(1.25rem, 3vw, 1.35rem);
         margin-bottom: 0.5rem;
         font-weight: 700;
     }
 
     p {
-        font-size: 1rem;
+        font-size: clamp(0.875rem, 2vw, 1rem);
         margin: 0;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 480px) {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        padding: 1rem;
     }
 }
