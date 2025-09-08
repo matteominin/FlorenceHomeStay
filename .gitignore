@@ -10,8 +10,6 @@ build/
 
 # Firebase cache
 .firebase/
-.firebaserc
-firebase.json
 
 # Firebase config
 
