@@ -29,11 +29,11 @@ const ContactUs = () => {
                         <h3>Email</h3>
                         <a href="mailto:info@example.com">info@example.com</a>
                     </div>
-                    <div className={styles.contactMethod}>
+                    {/* <div className={styles.contactMethod}>
                         <img src={phoneIcon} alt="Phone Icon" />
                         <h3>Phone</h3>
                         <a href="tel:+1234567890">+1 234 567 890</a>
-                    </div>
+                    </div> */}
                     <div className={styles.contactMethod}>
                         <img src={locationIcon} alt="Location Icon" />
                         <h3>Location</h3>
@@ -47,12 +47,12 @@ const ContactUs = () => {
 
                 <div className={styles.map_container}>
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.1222073449103!2d106.77590781537452!3d-6.2476228629146675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f11b12c11ab7%3A0xcd48f5c775249316!2sHumanity%20First%20Indonesia!5e0!3m2!1sid!2sid!4v1605684563677!5m2!1sid!2sid"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2880.679896950226!2d11.237552013083508!3d43.77950317097597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132a56bab97a34a5%3A0x8357733d527ef7af!2sVia%20delle%20Porte%20Nuove%2C%2011%2C%2050144%20Firenze%20FI!5e0!3m2!1sit!2sit!4v1757365289783!5m2!1sit!2sit"
                         width={MapStyle.width}
                         height={MapStyle.height}
                         style={{ border: 0, borderRadius: '1rem' }}
-                        allowFullScreen=""
-                        aria-hidden="false"
+                        allowFullScreen={true}
+                        aria-hidden={false}
                         tabIndex="0"
                         title="Humanity First Indonesia"
                     />
@@ -64,5 +64,3 @@ const ContactUs = () => {
 }
 
 export default ContactUs
-
-// TODO: update contact details and map link

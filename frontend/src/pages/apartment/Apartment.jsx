@@ -48,7 +48,8 @@ const Apartment = () => {
                         description: "Also 15 sqm (161 sq ft), the Annunziata Room features a large window that opens onto a tranquil inner courtyard, ensuring a serene atmosphere."
                     }
                 ]}
-                redirect="#"
+                redirect="https://www.airbnb.it/rooms/1323052828660721596"
+                target="_blank"
                 cta="Book Your Stay Now!"
                 textAlign="center"
             />

@@ -9,6 +9,7 @@ const FeatureSection = ({
     description,
     featureSections = [],
     redirect,
+    target = "_self",
     cta = "Learn More",
     textAlign = ""
 }) => {
@@ -36,7 +37,7 @@ const FeatureSection = ({
 
             <div className="feature-section__cta">
                 <Button variant='outlined'>
-                    <a href={redirect}>{cta}</a>
+                    <a href={redirect} target={target}>{cta}</a>
                 </Button>
             </div>
         </section>

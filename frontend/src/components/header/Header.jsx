@@ -74,7 +74,7 @@ function Header() {
             </ul>
 
             <Button className="desktop-cta">
-                <a href="#">Book Your Stay!</a>
+                <a href="https://www.airbnb.it/rooms/1323052828660721596" target='_blank'>Book Your Stay!</a>
             </Button>
         </header>
     )

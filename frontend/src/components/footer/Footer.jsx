@@ -1,7 +1,8 @@
 import logo from '../../assets/logo-white.png'
-import facebookIcon from '../../assets/facebook.png'
+import airbnbIcon from '../../assets/airbnb.png'
+/* import facebookIcon from '../../assets/facebook.png'
 import instagramIcon from '../../assets/instagram.png'
-import twitterIcon from '../../assets/twitter.png'
+import twitterIcon from '../../assets/twitter.png' */
 import './Footer.scss'
 
 const Footer = () => {
@@ -14,26 +15,28 @@ const Footer = () => {
                     </a>
                     <div className="left__field">
                         <p>Address:</p>
-                        <p>Via Roma 1, 50100 Florence, Italy</p>
+                        <a href="https://maps.app.goo.gl/j4E79DBKj47FrEF46" target="_blank" rel="noopener noreferrer">
+                            Via delle Porte Nuove 11, Florence, IT
+                        </a>
                     </div>
 
                     <div className="left__field">
                         <p>Contact:</p>
-                        <a href="tel:0551234567">055 1234567</a>
+                        {/* <a href="tel:0551234567">055 1234567</a> */}
                         <a href='mailto:booking@florencehomestay.com'>
                             booking@florencehomestay.com
                         </a>
                     </div>
 
                     <div className="left__field social">
-                        <a href="#">
+                        {/*  <a href="#">
                             <img src={facebookIcon} alt="Facebook" />
                         </a>
                         <a href="#">
                             <img src={instagramIcon} alt="Instagram" />
-                        </a>
-                        <a href="#">
-                            <img src={twitterIcon} alt="Twitter" />
+                        </a> */}
+                        <a href="https://www.airbnb.it/rooms/1323052828660721596" target="_blank" rel="noopener noreferrer">
+                            <img src={airbnbIcon} alt="AirBnb" />
                         </a>
                     </div>
                 </div>
