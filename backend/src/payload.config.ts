@@ -52,5 +52,6 @@ export default buildConfig({
   ],
   cors: [
     'http://localhost:5173',
+    'https://florencehomestay.web.app'
   ].filter(Boolean)
 })
