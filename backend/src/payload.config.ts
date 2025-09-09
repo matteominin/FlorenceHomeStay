@@ -1,11 +1,11 @@
 // storage-adapter-import-placeholder
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
-import { payloadCloudPlugin } from '@payloadcms/payload-cloud'
 import { lexicalEditor, FixedToolbarFeature } from '@payloadcms/richtext-lexical'
 import path from 'path'
 import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
+import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 
 import { Users } from './collections/Users'
 import { Articles } from './collections/Articles'
@@ -47,8 +47,14 @@ export default buildConfig({
   }),
   sharp,
   plugins: [
-    payloadCloudPlugin(),
-    // storage-adapter-placeholder
+    //payloadCloudPlugin(),
+    vercelBlobStorage({
+      enabled: true,
+      collections: {
+        media: true
+      },
+      token: process.env.BLOB_READ_WRITE_TOKEN,
+    }),
   ],
   cors: [
     'http://localhost:5173',
