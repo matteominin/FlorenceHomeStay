@@ -18,6 +18,9 @@ footer {
 
         .logo {
             margin-bottom: 2rem;
+            img {
+                    width: 4rem;
+                }
         }
 
         .left {
@@ -29,7 +32,7 @@ footer {
                 display: flex;
 
                 a {
-                    margin-right: 1rem;
+                    margin-right: 0;
                 }
             }
         }

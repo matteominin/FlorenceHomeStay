@@ -68,7 +68,7 @@ function Header() {
                 </li>
                 <li>
                     <Button className="cta mobile-cta" onClick={toggleMenu}>
-                        <a href="#">Book Your Stay!</a>
+                        <a href="https://www.airbnb.it/rooms/1323052828660721596" target='_blank'>Book Your Stay!</a>
                     </Button>
                 </li>
             </ul>
