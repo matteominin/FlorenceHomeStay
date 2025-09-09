@@ -27,7 +27,7 @@ const ContactUs = () => {
                     <div className={styles.contactMethod}>
                         <img src={emailIcon} alt="Email Icon" />
                         <h3>Email</h3>
-                        <a href="mailto:info@example.com">info@example.com</a>
+                        <a href="mailto:booking@florencehomestay.com">booking@florencehomestay.com</a>
                     </div>
                     {/* <div className={styles.contactMethod}>
                         <img src={phoneIcon} alt="Phone Icon" />
@@ -37,8 +37,8 @@ const ContactUs = () => {
                     <div className={styles.contactMethod}>
                         <img src={locationIcon} alt="Location Icon" />
                         <h3>Location</h3>
-                        <p>Location: 123 Main St, Anytown, USA</p>
-                        <a className={styles.location} href="#">
+                        <p>Location: Via delle Porte Nuove 11, Florence, IT</p>
+                        <a className={styles.location} href="https://maps.app.goo.gl/j4E79DBKj47FrEF46" target="_blank" rel="noopener noreferrer">
                             Get Directions
                             <img src={arrow} alt="Arrow" />
                         </a>
@@ -54,7 +54,7 @@ const ContactUs = () => {
                         allowFullScreen={true}
                         aria-hidden={false}
                         tabIndex="0"
-                        title="Humanity First Indonesia"
+                        title="Florence Homestay Location"
                     />
                 </div>
             </div>
